@@ -15,16 +15,18 @@ public class StudentOperationsController {
 	@GetMapping("/")
 	public String showHomePage() {
 		System.out.println("StudentOperationsController.showHomePage()");
-		return "welcome";   // LVN
+		// return  LVN
+		return "welcome";   
 	}
 	
-	@GetMapping("/register")
-	public String showStudentRegistrationPage() {
+	@GetMapping("/register")//for launching the form page
+	public String showStudentRegistrationPage(@ModelAttribute("stud") Student st) {
 		System.out.println("StudentOperationsController.showStudentRegistrationPage()");
-		return "student_register_form";   // LVN
+		//  return LVN
+		return "student_register_form";   
 	}
 	
-	@PostMapping("/register")
+	@PostMapping("/register") //for submitting  the form page
 	public String processStudentRegistration(
 			@ModelAttribute("stud") Student st,
 			Map<String, Object> map) {
@@ -48,7 +50,7 @@ public class StudentOperationsController {
 		// Add result to model
 		map.put("resultMsg", result);
 
-		// LVN
+		//return  LVN
 		return "display";
 	}
 }

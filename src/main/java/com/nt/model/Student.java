@@ -6,6 +6,11 @@ import lombok.Data;
 public class Student {
      private Integer sno;
      private String sname;
-     private String sadd;
+     private String sadd="Vijaywada";
      private Float avg;
+     
+     public Student() {
+    	 System.out.println("Student 0-param constructor");
+     }
+     
 }
